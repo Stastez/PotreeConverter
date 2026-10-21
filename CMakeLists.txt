@@ -71,42 +71,42 @@ endif (UNIX)
 # COPY PAGE TEMPLATE TO BINARY DIRECTORY
 ###############################################
 
-add_custom_command(
-	TARGET PotreeConverter POST_BUILD
-	COMMAND ${CMAKE_COMMAND} -E copy_directory
-		${PROJECT_SOURCE_DIR}/resources/page_template
-		$<TARGET_FILE_DIR:${PROJECT_NAME}>/resources/page_template)
-
-###############################################
-# COPY LICENSE FILES TO BINARY DIRECTORY
-###############################################
-add_custom_command(
-	TARGET PotreeConverter POST_BUILD
-	COMMAND ${CMAKE_COMMAND} -E copy
-		${LASZIP_DIR}/COPYING
-		$<TARGET_FILE_DIR:${PROJECT_NAME}>/licenses/license_laszip.txt)
-
-add_custom_command(
-	TARGET PotreeConverter POST_BUILD
-	COMMAND ${CMAKE_COMMAND} -E copy
-		${BROTLI_DIR}/LICENSE
-		$<TARGET_FILE_DIR:${PROJECT_NAME}>/licenses/license_brotli.txt)
-
-add_custom_command(
-	TARGET PotreeConverter POST_BUILD
-	COMMAND ${CMAKE_COMMAND} -E copy
-		${PROJECT_SOURCE_DIR}/Converter/libs/json/LICENSE
-		$<TARGET_FILE_DIR:${PROJECT_NAME}>/licenses/license_json.txt)
-
-add_custom_command(
-	TARGET PotreeConverter POST_BUILD
-	COMMAND ${CMAKE_COMMAND} -E copy
-		${PROJECT_SOURCE_DIR}/LICENSE
-		$<TARGET_FILE_DIR:${PROJECT_NAME}>/licenses/license_potree_converter.txt)
-
-add_custom_command(
-	TARGET PotreeConverter POST_BUILD
-	COMMAND ${CMAKE_COMMAND} -E copy
-		${PROJECT_SOURCE_DIR}/README.md
-		$<TARGET_FILE_DIR:${PROJECT_NAME}>/README.md)
+#add_custom_command(
+#	TARGET PotreeConverter POST_BUILD
+#	COMMAND ${CMAKE_COMMAND} -E copy_directory
+#		${PROJECT_SOURCE_DIR}/resources/page_template
+#		$<TARGET_FILE_DIR:${PROJECT_NAME}>/resources/page_template)
+#
+################################################
+## COPY LICENSE FILES TO BINARY DIRECTORY
+################################################
+#add_custom_command(
+#	TARGET PotreeConverter POST_BUILD
+#	COMMAND ${CMAKE_COMMAND} -E copy
+#		${LASZIP_DIR}/COPYING
+#		$<TARGET_FILE_DIR:${PROJECT_NAME}>/licenses/license_laszip.txt)
+#
+#add_custom_command(
+#	TARGET PotreeConverter POST_BUILD
+#	COMMAND ${CMAKE_COMMAND} -E copy
+#		${BROTLI_DIR}/LICENSE
+#		$<TARGET_FILE_DIR:${PROJECT_NAME}>/licenses/license_brotli.txt)
+#
+#add_custom_command(
+#	TARGET PotreeConverter POST_BUILD
+#	COMMAND ${CMAKE_COMMAND} -E copy
+#		${PROJECT_SOURCE_DIR}/Converter/libs/json/LICENSE
+#		$<TARGET_FILE_DIR:${PROJECT_NAME}>/licenses/license_json.txt)
+#
+#add_custom_command(
+#	TARGET PotreeConverter POST_BUILD
+#	COMMAND ${CMAKE_COMMAND} -E copy
+#		${PROJECT_SOURCE_DIR}/LICENSE
+#		$<TARGET_FILE_DIR:${PROJECT_NAME}>/licenses/license_potree_converter.txt)
+#
+#add_custom_command(
+#	TARGET PotreeConverter POST_BUILD
+#	COMMAND ${CMAKE_COMMAND} -E copy
+#		${PROJECT_SOURCE_DIR}/README.md
+#		$<TARGET_FILE_DIR:${PROJECT_NAME}>/README.md)
 

@@ -1662,6 +1662,8 @@ void doIndexing(string targetDir, State& state, Options& options, Sampler& sampl
 	
 	serialize_stage_chunkroots(indexer, chunks, nodes, state, totalPoints, totalBytes, pointsProcessed);
 
+	double duration = now() - tStart;
+	state.values["duration(indexing)"] = formatNumber(duration, 3);
 }
 
 void doMerging(string targetDir, State& state, Options& options, Sampler& sampler) {
@@ -1785,7 +1787,7 @@ void doMerging(string targetDir, State& state, Options& options, Sampler& sample
 	}
 
 	double duration = now() - tStart;
-	state.values["duration(indexing)"] = formatNumber(duration, 3);
+	state.values["duration(merging)"] = formatNumber(duration, 3);
 }
 
 
